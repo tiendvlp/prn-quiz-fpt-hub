@@ -9,7 +9,7 @@ namespace BusinessObject
         public int QuizId { get; set; }
         public String Content { get; set; }
         [ForeignKey("Answer")]
-        public int RightAnswerId { get; set; }
+        public String RightAnswerId { get; set; }
         [ForeignKey("QuizId")]
         public virtual Quiz Quiz { get; set; }
         [ForeignKey("RightAnswerId")]
@@ -20,11 +20,11 @@ namespace BusinessObject
 
         }
 
-        public Question(String id, int quizId, String content, int rightAnswer) : base(id)
+        public Question(String id, int quizId, String content, String rightAnswer) : base(id)
         {
             QuizId = quizId;
             Content = content;
-            RightAnswer = rightAnswer;
+            RightAnswerId = rightAnswer;
         }
     }
 }
